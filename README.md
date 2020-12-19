@@ -1,3 +1,17 @@
+## About this branch
+
+This branch contains only the files you need to include PFFFT in your project, without cmake, tests and benchmarks. Just keep in mind the following things:
+
+- To have PFFFT use NEON instrisics on ARM, define the macro `PFFFT_ENABLE_NEON` (and compile with `"-mfpu=neon"`).
+  
+- On Windows, PFFFT will use AVX instructions for its double precision routines, if you compile with `/arch:AVX`, or fallback to SSE2 instructions.
+
+- You can forbid PFFFT to use AVX instructions by defining the macro `PFFFT_AVX_DISABLE`.
+
+- On Unix, you have to link with the "m" library. 
+
+Here follows the original readme.
+
 # PFFFT: a pretty fast FFT and fast convolution with PFFASTCONV
 
 ## TL;DR
