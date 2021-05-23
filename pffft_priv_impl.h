@@ -1543,7 +1543,7 @@ void FUNC_ZCONVOLVE_ACCUMULATE(SETUP_STRUCT *s, const float *a, const float *b, 
   __builtin_prefetch(vb+6);
   __builtin_prefetch(vab+6);
 # ifndef __clang__
-#   define ZCONVOLVE_USING_INLINE_NEON_ASM
+#   define ZCONVOLVE_USING_INLINE_ASM
 # endif
 #endif
 
@@ -1644,7 +1644,7 @@ void FUNC_ZCONVOLVE_NO_ACCU(SETUP_STRUCT *s, const float *a, const float *b, flo
   __builtin_prefetch(vb+6);
   __builtin_prefetch(vab+6);
 # ifndef __clang__
-#   define ZCONVOLVE_USING_INLINE_NEON_ASM
+#   define ZCONVOLVE_USING_INLINE_ASM
 # endif
 #endif
 
